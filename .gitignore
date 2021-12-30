@@ -18,3 +18,4 @@ coverage.*
 test-output.*
 .cache/
 .mypy_cache/
+.vscode
