@@ -1,17 +1,18 @@
 """String manipulations module"""
 import re
 
-def convert(input: str, case: str) -> str:
+def convert(provided_string: str, case: str) -> str:
     """Main flow function"""
-    return ""
+    if case == "camel":
+        return camel_converter(provided_string)
 
-def clean_up (input: str) -> str:
-    """Clean up string from nonalphanumerical characters"""
-    cleaned_string = re.sub(r'\W+','', input)
+def clean_up (provided_string: str) -> str:
+    """Cleans up string from nonalphanumerical characters"""
+    cleaned_string = re.sub(r'\W+','', provided_string)
     return cleaned_string
 
-def camel_converter(input: str) -> str:
+def camel_converter(provided_string: str) -> str:
     """Convert into camel case"""
-    result = [word.capitalize() for word in input.split() ]
+    result = [word.capitalize() for word in provided_string.split() ]
     result[0] = result[0].lower()
     return clean_up(''.join(str(word) for word in result ))
