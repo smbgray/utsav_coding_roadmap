@@ -16,3 +16,24 @@ def camel_converter(provided_string: str) -> str:
     result = [word.capitalize() for word in provided_string.split() ]
     result[0] = result[0].lower()
     return clean_up(''.join(str(word) for word in result ))
+
+def snake_converter(provided_string: str) -> str:
+    """Convert into snake case"""
+    result = [word.lower() for word in provided_string.split() ]
+    return clean_up('_'.join(str(word) for word in result ))
+
+def kebab_converter(provided_string: str) -> str:
+    """Convert into kebab case"""
+    result = [clean_up(word.lower()) for word in provided_string.split() ]
+    return '-'.join(str(word) for word in result )
+
+def pascal_converter(provided_string: str) -> str:
+    """Convert into pascal case"""
+    result = [word.lower() for word in provided_string.split() ]
+    return clean_up('-'.join(str(word).capitalize() for word in result ))
+
+
+def uppercasesnake_converter(provided_string: str) -> str:
+    """Convert into kebab case"""
+    result = [word.lower() for word in provided_string.split() ]
+    return clean_up('_'.join(str(word).upper() for word in result ))
