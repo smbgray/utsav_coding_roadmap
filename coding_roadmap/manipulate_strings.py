@@ -1,5 +1,6 @@
 """String manipulations module"""
 import re
+from typing import List
 
 def convert(provided_string: str, case: str) -> str:
     """Main flow function"""
@@ -45,3 +46,7 @@ def is_palindrome(provided_string: str) -> bool:
         return True
     else:
         return False
+
+def restore_string(provided_string: str, indices: List[int]) -> str:
+    y = [provided_string[indices.index(i)] for i in range(len(indices))]
+    return ("".join(y))
