@@ -20,5 +20,11 @@ def test_convert_to_pascal():
 def test_convert_to_uppercasesnake():
     assert cr.uppercasesnake_converter("Hello, World.") == "HELLO_WORLD"
 
-def test_clean_up ():
+def test_clean_up():
     assert cr.clean_up("remove spaces and others,;/:") == "removespacesandothers"
+
+def test_polindrom():
+    assert True == cr.is_palindrome("A man, a plan, a canal: Panama")
+
+def test_polindrom_with_underscore():
+    assert True == cr.is_palindrome("Ab_a")

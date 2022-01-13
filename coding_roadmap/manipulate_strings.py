@@ -37,3 +37,11 @@ def uppercasesnake_converter(provided_string: str) -> str:
     """Convert into kebab case"""
     result = [word.lower() for word in provided_string.split() ]
     return clean_up('_'.join(str(word).upper() for word in result ))
+
+def is_palindrome(provided_string: str) -> bool:
+    """vaslidate if string is palindrome"""
+    reversed_string = clean_up(provided_string).lower().replace("_","")[::-1]
+    if reversed_string == clean_up(provided_string).lower().replace("_",""):
+        return True
+    else:
+        return False
